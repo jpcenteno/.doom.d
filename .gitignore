@@ -1,0 +1,7 @@
+.DA'S_Store
+.idea
+*.log
+tmp/
+
+# Don't save settings that weren't explicitly coded by me.
+custom.el
