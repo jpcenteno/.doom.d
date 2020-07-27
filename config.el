@@ -52,3 +52,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Evil mode:
+
+; Restore substitution behavior on ~s/s~.
+(after! evil-snipe (evil-snipe-mode -1))
+(map! :after evil
+      :nv ";" 'evil-ex
+      :nv "C-h" 'evil-ex-nohighlight)
