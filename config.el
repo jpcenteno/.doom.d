@@ -73,3 +73,7 @@
       :nv "C-h" 'evil-ex-nohighlight
       ;; Prevent evil-emacs-state.
       :nviomrg "C-z" nil)
+
+;; Mac OS
+;; Right option key for symbols keyboard
+(setq ns-right-alternate-modifier 'none)
