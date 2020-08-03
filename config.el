@@ -9,6 +9,9 @@
 (setq user-full-name "Joaquín P. Centeno"
       user-mail-address "jpcenteno@users.noreply.github.com")
 
+(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(width . 100))
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
