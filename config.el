@@ -38,7 +38,7 @@
   (setq calendar-longitude -58.3816)
   (require 'theme-changer)
   :config
-  (change-theme 'doom-solarized-light 'doom-challenger-deep))
+  (change-theme 'doom-opera-light 'doom-city-lights))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
