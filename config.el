@@ -45,6 +45,19 @@
 (setq org-directory "~/org/")
 (after! deft (setq deft-directory "~/org/notes"))
 
+;; org mode
+(after! org
+  (setq org-directory "~/org")
+  (setq org-agenda-files
+        (nconc
+         (file-expand-wildcards
+          (concat (file-name-as-directory org-directory) "*.org"))
+         (file-expand-wildcards
+          (concat (file-name-as-directory org-directory) "projects/*.org"))))
+
+  ;; Keep 1 blank line after collapsed list elements. Let them breathe.
+  (setq org-cycle-separator-lines 1))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type nil)
