@@ -4,6 +4,17 @@ My Doom Emacs config.
 
 ** Getting Started
 
+*** Prerequisites
+
+**** Mac Os:
+
+#+BEGIN_SRC sh
+brew install cmake libvterm # For vterm
+brew cask install emacs
+#+END_SRC
+
+*** Install
+
 Ensure Emacs is Installed, then run:
 #+BEGIN_SRC sh
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
