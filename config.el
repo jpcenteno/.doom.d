@@ -97,3 +97,13 @@
 ;; Mac OS
 ;; Right option key for symbols keyboard
 (setq ns-right-alternate-modifier 'none)
+
+;; -----------------------------------------------------------------------------
+;; Lang - Elixir
+;; -----------------------------------------------------------------------------
+
+(after! elixir-mode
+  ;; Create a buffer-local hook to run elixir-format on save, only when we
+  ;; enable elixir-mode.
+  (add-hook 'elixir-mode-hook
+            (lambda () (add-hook 'before-save-hook 'elixir-format nil t))))
