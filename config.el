@@ -47,7 +47,11 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
-(after! deft (setq deft-directory "~/org/notes"))
+
+(after! deft
+  (setq deft-directory "~/org/notes")
+  (unless (file-exists-p deft-directory)
+    (make-directory deft-directory t)))
 
 ;; org mode
 (after! org
