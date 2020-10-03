@@ -93,19 +93,10 @@
 (map! :after evil
       :nv ";" 'evil-ex
       :nv "C-h" 'evil-ex-nohighlight
+      :nviomrg "C-SPC" 'counsel-M-x
       ;; Prevent evil-emacs-state.
       :nviomrg "C-z" nil)
 
 ;; Mac OS
 ;; Right option key for symbols keyboard
 (setq ns-right-alternate-modifier 'none)
-
-;; -----------------------------------------------------------------------------
-;; Lang - Elixir
-;; -----------------------------------------------------------------------------
-
-(after! elixir-mode
-  ;; Create a buffer-local hook to run elixir-format on save, only when we
-  ;; enable elixir-mode.
-  (add-hook 'elixir-mode-hook
-            (lambda () (add-hook 'before-save-hook 'elixir-format nil t))))
