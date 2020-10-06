@@ -27,6 +27,10 @@
       doom-variable-pitch-font
       (font-spec :family "Source Serif Pro" :size 12 :weight 'light))
 
+;; Show trailing whitespace. Delete trailing whitespace before save.
+(setq show-trailing-whitespace t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
