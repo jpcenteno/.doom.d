@@ -84,7 +84,6 @@
 
 (map! :after evil
       :nv ";" 'evil-ex
-      :nv "C-h" 'evil-ex-nohighlight
       ;; Prevent evil-emacs-state.
       :nviomrg "C-z" nil)
 
