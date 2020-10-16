@@ -137,19 +137,18 @@
                                         ; Load images by default
    org-startup-with-inline-images t
                                         ; Resize very large images.
-   mm-inline-large-images t)
+   mm-inline-large-images t))
 
 
-  ;; ==============================================================================
-  ;; Terminal:
-  ;; ==============================================================================
+;; ==============================================================================
+;; Terminal:
+;; ==============================================================================
 
-  (use-package! vterm
-    :init
-    ;; Disable `evil-mode' on `vterm-mode'.
-    (after! evil
-      ;; Send `<escape>' key to the terminal instead of evil mode. Hide the
-      ;; buffer by closing the window using `C-x 0'.
-      (evil-define-key 'insert vterm-mode-map
-        (kbd "<escape>") #'vterm--self-insert)))
-  )
+(use-package! vterm
+  :init
+  ;; Disable `evil-mode' on `vterm-mode'.
+  (after! evil
+    ;; Send `<escape>' key to the terminal instead of evil mode. Hide the
+    ;; buffer by closing the window using `C-x 0'.
+    (evil-define-key 'insert vterm-mode-map
+      (kbd "<escape>") #'vterm--self-insert)))
