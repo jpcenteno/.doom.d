@@ -1,0 +1,15 @@
+* %^{Title}
+  :PROPERTIES:
+  :Date:     %T
+  :Tags:     %^{Tags}
+  :END:
+
+** Problem
+
+%^{Problem}
+
+** Features and Requirements
+
+*** MVP
+
+%?

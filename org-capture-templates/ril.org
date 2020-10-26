@@ -1,0 +1,9 @@
+** README %^{Title}
+   :PROPERTIES:
+   :URL:      %^{URL}
+   :Author:   %^{Author}
+   :Tags:     %^{Tags}
+   :Date:     %T
+   :END:
+
+%?

@@ -139,6 +139,26 @@
                                         ; Resize very large images.
    mm-inline-large-images t))
 
+(defun define-org-capture-template (template)
+  "Add a org-capture template to org-capture-templates removing previous entries
+with the same key."
+  (let* ((keys              (car template))
+         (has-same-key-p    (lambda (x) (string= keys (car x))))
+         (templates-clean   (cl-remove-if has-same-key-p org-capture-templates))
+         (templates-updated (cons template templates-clean)))
+    (setq org-capture-templates templates-updated)))
+
+(define-org-capture-template
+  '("r" "RIL entry" entry (file "~/org/ril.org")
+    (file "~/.doom.d/org-capture-templates/ril.org")
+    :empty-lines-before 1))
+
+(define-org-capture-template
+  '("i" "Idea" entry
+    (file "~/org/ideas.org")
+    (file "~/.doom.d/org-capture-templates/idea.org")
+    :empty-lines-before 1))
+
 
 ;; ==============================================================================
 ;; Terminal:
