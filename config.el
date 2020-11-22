@@ -68,6 +68,25 @@
   :config
   (change-theme 'doom-opera-light 'doom-city-lights))
 
+;;; =============================================================================
+;;; Auto save:
+;;; =============================================================================
+
+;; `auto-save-mode` creates periodic backup files for buffers.
+;;
+;; My biggest concern is that autosave might expose encrypted files [1].
+;;
+;; Beyond that, I don't need this feature, since I save files periodically by
+;; hitting `:q`.
+;;
+;; For more documentation on autosave, see [2].
+;;
+;; [1]: https://orgmode.org/worg/org-tutorials/encrypting-files.html#org9eb228a
+;; [2]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Save.html
+
+(setq auto-save-default nil
+      auto-save-visited-mode nil)
+
 ;; ==============================================================================
 ;; Text editing:
 ;; ==============================================================================
