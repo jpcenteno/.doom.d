@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! theme-changer)
+(package! org-fancy-priorities)

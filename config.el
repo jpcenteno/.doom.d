@@ -158,6 +158,18 @@
                                         ; Resize very large images.
    mm-inline-large-images t))
 
+;; Pakcage org-fancy-priorities [1] replaces org-mode priorities with custom
+;; strings.
+;;
+;; I use the same unicode flag symbol for the three priorities, which are then
+;; color-coded by the theme I use.
+;;
+;; [1]: https://github.com/harrybournis/org-fancy-priorities
+(use-package org-fancy-priorities
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("⚑" "⚑" "⚑")))
+
 (defun define-org-capture-template (template)
   "Add a org-capture template to org-capture-templates removing previous entries
 with the same key."
