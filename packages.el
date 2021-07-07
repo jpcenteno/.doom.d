@@ -54,3 +54,5 @@
 ;; IDK, what the `snipe' package is, but it's bindings override the default
 ;; substitution vim bindings, so I decided to deactivate it.
 (package! evil-snipe :disable t)
+
+(package! nix-sandbox)
