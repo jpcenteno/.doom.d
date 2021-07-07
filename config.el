@@ -82,3 +82,16 @@
       :nv ";" 'evil-ex
       ;; Prevent evil-emacs-state.
       :nviomrg "C-z" nil)
+
+(after! smart-parens
+  (sp-with-modes 'org-mode
+    ;; Code
+    (sp-local-pair "~" "~")
+    ;; Verbatim
+    (sp-local-pair "=" "=")
+    ;; strike-through
+    (sp-local-pair "+" "+")
+    ;; Underlined
+    (sp-local-pair "_" "_")
+    ;; Italic
+    (sp-local-pair "/" "/")))
