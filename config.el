@@ -53,10 +53,6 @@
  doom-modeline-modal-icon nil)
 
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -75,6 +71,52 @@
 ;; they are implemented.
 
 ;; -----------------------------------------------------------------------------
+;; Org Mode.
+;; -----------------------------------------------------------------------------
+
+;; If you use `org' and don't want your org files in the default location below,
+;; change `org-directory'. It must be set before org loads!
+(setq org-directory "~/org/")
+
+(setq org-agenda-files '("~/gtd/inbox.org"
+                         "~/gtd/gtd.org"
+                         "~/gtd/tickler.org"))
+
+(setq org-capture-templates '(("i" "Inbox entry" entry
+                               (file+headline "~/gtd/inbox.org" "Inbox")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/gtd/tickler.org" "Tickler")
+                               "* %i%? \n %U")))
+
+(setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
+                           ("~/gtd/someday.org" :level . 1)
+                           ("~/gtd/tickler.org" :maxlevel . 2)))
+
+(sp-with-modes 'org-mode
+  ;; Code
+  (sp-local-pair "~" "~")
+  ;; Verbatim
+  (sp-local-pair "=" "=")
+  ;; strike-through
+  (sp-local-pair "+" "+")
+  ;; Underlined
+  (sp-local-pair "_" "_")
+  ;; Italic
+  (sp-local-pair "/" "/"))
+
+;; Leave a blank line between folded headings.
+(setq org-cycle-separator-lines -1
+      ;; org-bullets-bullet-list '("ᛝ")
+      )
+
+(use-package! org-bullets
+  :hook '(org-mode . org-bullets-mode)
+  :init
+  (setq org-bullets-bullet-list '("➥"))
+  :commands org-bullets-mode)
+
+;; -----------------------------------------------------------------------------
 ;; Evil Mode.
 ;; -----------------------------------------------------------------------------
 
@@ -82,16 +124,3 @@
       :nv ";" 'evil-ex
       ;; Prevent evil-emacs-state.
       :nviomrg "C-z" nil)
-
-(after! smart-parens
-  (sp-with-modes 'org-mode
-    ;; Code
-    (sp-local-pair "~" "~")
-    ;; Verbatim
-    (sp-local-pair "=" "=")
-    ;; strike-through
-    (sp-local-pair "+" "+")
-    ;; Underlined
-    (sp-local-pair "_" "_")
-    ;; Italic
-    (sp-local-pair "/" "/")))
