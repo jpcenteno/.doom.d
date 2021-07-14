@@ -106,9 +106,7 @@
   (sp-local-pair "/" "/"))
 
 ;; Leave a blank line between folded headings.
-(setq org-cycle-separator-lines -1
-      ;; org-bullets-bullet-list '("ᛝ")
-      )
+(setq org-cycle-separator-lines -1)
 
 (use-package! org-bullets
   :hook '(org-mode . org-bullets-mode)
